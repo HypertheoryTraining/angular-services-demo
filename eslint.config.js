@@ -14,7 +14,7 @@ module.exports = tseslint.config(
     processor: angular.processInlineTemplates,
     rules: {
       "no-restricted-syntax": [
-        "warn",
+        "off",
         {
           selector: "CallExpression[callee.name='Injectable']",
           message:
