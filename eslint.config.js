@@ -2,7 +2,6 @@
 const eslint = require("@eslint/js");
 const tseslint = require("typescript-eslint");
 const angular = require("angular-eslint");
-
 module.exports = tseslint.config(
   {
     files: ["**/*.ts"],
@@ -14,7 +13,16 @@ module.exports = tseslint.config(
     ],
     processor: angular.processInlineTemplates,
     rules: {
+      "no-restricted-syntax": [
+        "warn",
+        {
+          selector: "CallExpression[callee.name='Injectable']",
+          message:
+            "Are you sure you don't want to just create a provider for this?",
+        },
+      ],
       "@typescript-eslint/consistent-type-definitions": "off",
+
       "@angular-eslint/directive-selector": [
         "error",
         {
@@ -40,5 +48,11 @@ module.exports = tseslint.config(
       ...angular.configs.templateAccessibility,
     ],
     rules: {},
+  },
+  {
+    files: ["src/app/features/**.*.ts"],
+    rules: {
+      "no-cond-assign": ["off"],
+    },
   },
 );
