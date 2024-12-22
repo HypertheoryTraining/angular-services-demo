@@ -5,11 +5,11 @@ import { GlobalService } from '../../services/global.service';
   selector: 'app-people',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [],
-  template: ` <div class="ml-4 border-gray-400 border-2 p-4">
-    <p>People</p>
+  template: ` <div class="ml-4 border-orange-400 border-2 border-dashed p-4 ">
+    <h2 class="text-2xl text-gray-500"><pre>PeopleComponent</pre></h2>
     <p>MSG: {{ g.msg() }}</p>
     <button
-      (click)="g.msg.set('Changed from home')"
+      (click)="g.msg.set('Changed from PeopleComponent')"
       class="btn btn-md btn-accent"
     >
       Change Global Msg
@@ -20,7 +20,6 @@ import { GlobalService } from '../../services/global.service';
 })
 export class PeopleComponent {
   g = inject(GlobalService);
-
   constructor() {
     console.group('PeopleComponent');
     console.log(`Id is ${this.g.id}`);

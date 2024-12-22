@@ -4,9 +4,10 @@ import { HelperService } from './helper.service';
 @Injectable({ providedIn: 'root' })
 export class GlobalService {
   readonly id = crypto.randomUUID();
+  h = inject(HelperService);
+
   msg = signal('Default from Global Service');
 
-  h = inject(HelperService);
   constructor() {
     console.group(
       '%cGlobalService',

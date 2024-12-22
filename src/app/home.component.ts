@@ -7,10 +7,13 @@ import { GlobalService } from './services/global.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RouterLink, RouterLinkActive, RouterOutlet],
   template: `
-    <div class="ml-4 border-gray-400 border-2 p-4">
+    <div
+      class="container m-4  p-4 border-2 border-dashed border-blue-600 h-fit w-fit"
+    >
+      <h2 class="text-2xl text-gray-500"><pre>HomeComponent</pre></h2>
       <p>MSG: {{ g.msg() }}</p>
       <button
-        (click)="g.msg.set('Changed from home')"
+        (click)="g.msg.set('Changed from HomeComponent')"
         class="btn btn-md btn-accent"
       >
         Change Global Msg

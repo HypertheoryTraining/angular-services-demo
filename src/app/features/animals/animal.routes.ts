@@ -5,6 +5,7 @@ import { DogComponent } from './dog.component';
 export const ANIMAL_ROUTES: Routes = [
   {
     path: '',
+    providers: [],
     component: AnimalComponent,
     children: [
       { path: 'dog', component: DogComponent },
