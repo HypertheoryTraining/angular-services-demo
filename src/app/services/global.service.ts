@@ -1,7 +1,6 @@
-import { inject, Injectable, signal } from '@angular/core';
+import { inject, signal } from '@angular/core';
 import { HelperService } from './helper.service';
 
-@Injectable({ providedIn: 'root' })
 export class GlobalService {
   readonly id = crypto.randomUUID();
   h = inject(HelperService);
